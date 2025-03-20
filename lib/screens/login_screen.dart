@@ -141,6 +141,15 @@ class _LoginScreenState extends State<LoginScreen> {
                       : const Text('Login', style: TextStyle(fontSize: 18)),
                 ),
               ),
+              // lib/screens/login_screen.dart (update)
+// Add this at the end of the Column in the build method
+              const SizedBox(height: 20),
+              TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/signup');
+                },
+                child: const Text('Don\'t have an account? Sign up'),
+              ),
             ],
           ),
         ),
