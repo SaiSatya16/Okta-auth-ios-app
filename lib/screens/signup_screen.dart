@@ -35,7 +35,7 @@ class _SignupScreenState extends State<SignupScreen> {
           "email": _emailController.text,
           "login": _emailController.text,
           "subscription": "basic",
-          "appAccess": true
+          "native_app_access": true
         },
         "credentials": {
           "password": {"value": _passwordController.text}
