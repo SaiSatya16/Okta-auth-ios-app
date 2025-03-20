@@ -5,6 +5,7 @@ import 'dart:convert';
 import 'login_screen.dart';
 import 'edit_profile_screen.dart';
 import 'subscription_screen.dart';
+import 'mfa_management_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   final String username;
@@ -190,12 +191,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
             const SizedBox(height: 32),
 
             // Action buttons
+            // Action buttons
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 _buildActionButton(
                   icon: Icons.edit,
-                  label: 'Edit Profile',
+                  label: 'Edit',
                   onTap: () {
                     Navigator.push(
                       context,
@@ -210,8 +212,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   },
                 ),
                 _buildActionButton(
+                  icon: Icons.security,
+                  label: 'MFA',
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MFAManagementScreen(
+                          username: widget.username,
+                          token: widget.token,
+                        ),
+                      ),
+                    );
+                  },
+                ),
+                _buildActionButton(
                   icon: Icons.card_membership,
-                  label: 'Manage Subscription',
+                  label: 'Subscription',
                   onTap: () {
                     Navigator.push(
                       context,
